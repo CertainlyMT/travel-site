@@ -1,0 +1,9 @@
+body {
+	font-family: 'Roboto', sans-serif; /*sans-serif as a backup in case Roboto is not available*/
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

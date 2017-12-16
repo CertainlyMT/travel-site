@@ -1,0 +1,39 @@
+/* _at the first of the filename indicate that file is a partial file */
+.large-hero {
+	position: relative;
+
+	&__text-content {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%); /* translateY: position an element vertically relative to itself,e.g: 100% -> down by its own height; */
+		left: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	&__title {
+		font-weight: 300;
+		color: $mainBlue;
+		font-size: 4.8rem;
+		margin: 0;
+	}
+
+	&__subtitle {
+		font-weight: 300;
+		color: $mainBlue;
+		font-size: 2,9rem;
+		margin: 0;
+	}
+
+	&__description {
+		color: #fff;
+		font-size: 1.5rem;
+		max-width: 25rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+/* BEM: do not write .large-hero h1; Instead give it a name */

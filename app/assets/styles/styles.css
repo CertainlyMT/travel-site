@@ -1,0 +1,12 @@
+/* main css file only contain single-responsibility css */
+/* inside modules folder, we have new file for each block of the design */
+/* inside base foldr
+/* @import "modules/_large-hero"; -> this is a real CSS feature
+	However, we do not want to download multiple CSS, instead, we want to tell Gulp to replace this line by th actual content*/
+@import "normalize.css";
+@import "base/_global";
+@import "base/_variables";
+@import "modules/_large-hero";
+@import "modules/_btn";
+
+
