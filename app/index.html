@@ -25,7 +25,24 @@
   <div class="large-hero">
     <!--You can also use the image as a CSS background so you won't have to worry about positioning.
       However, there are drawbacks. One of it is responsive images-->
-    <img src="assets/images/hero--large.jpg">
+    <!-- <img src="assets/images/hero- -large.jpg"> -->
+    <!-- There are 2 reasons for resposive images: 
+      1) art direction & cropping situation
+        <picture>
+          <source srcset="images/dog-crop-large.jpg" media="(min-width: 1200px">
+          <source srcset="images/dog-crop-medium.jpg" media="(min-width: 760px)">
+          <img src="images/dog-crop-small.jpg" alt="Puppy in the sand">
+        </picture>
+      2) image resolution and file size
+        <img srcset="images/dog-resolution-small.jpg 570w, images/dog-resolution-medium.jpg 1200w, images/dog-resolution-large.jpg 1920w" alt="Puppy in the sand 2"> -->
+    <!-- And here is the responsive images -->
+    <picture>
+      <source srcset="assets/images/hero--large.jpg 1920w, assets/images/hero--large-hi-dpi.jpg 3840w" media="(min-width: 1380px)">
+      <source srcset="assets/images/hero--medium.jpg 1380w, assets/images/hero--medium-hi-dpi.jpg 2760w" media="(min-width: 990px)">
+      <source srcset="assets/images/hero--small.jpg 990w, assets/images/hero--small-hi-dpi.jpg 1980w" media="(min-width: 640px)">
+      <img srcset="assets/images/hero--smaller.jpg 640w, assets/images/hero--smaller-hi-dpi.jpg 1280w" alt="Coastal view of ocean and mountains">
+    </picture>
+
     <div class="large-hero__text-content">
       <h1 class="large-hero__title">Your clarity.</h1>
       <h2 class="large-hero__subtitle">One trip away.</h2>
