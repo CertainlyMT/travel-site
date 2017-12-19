@@ -1,6 +1,14 @@
 /* _at the first of the filename indicate that file is a partial file */
 .large-hero {
 	position: relative;
+	border-bottom: 10px solid $mainBlue;
+
+	&__image {
+		display: block;
+		/* By default, img is treated as inline level element(similiar to a line of text), the browser will leave
+		a small space for the 'g' or 'y'
+		By saying that the image is block element, it treat image as a div */
+	}
 
 	&__text-content {
 		position: absolute;
@@ -15,20 +23,12 @@
 		font-weight: 300;
 		color: $mainBlue;
 		margin: 0;
-		font-size: 1.1rem; /* since the font-size is too big, we choose mobile view as our baseline, according to mobile-first */
+		font-size: 2.4rem; /* since the font-size is too big, we choose mobile view as our baseline, according to mobile-first */
 
 		/* Normally we can do like this: @media(min-width: 530px) { // if the screen is bigger than 530 px, then font-size 530px
 			font-size: 4.8rem;
 		}*/
 		@mixin atSmall {
-			font-size: 2rem;
-		}
-
-		@mixin atMedium {
-			font-size: 3.2rem;
-		}
-
-		@mixin atLarge {
 			font-size: 4.8rem;
 		}
 	}
@@ -36,7 +36,7 @@
 	&__subtitle {
 		font-weight: 300;
 		color: $mainBlue;
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 		margin: 0;
 
 		@mixin atSmall {
@@ -46,10 +46,16 @@
 
 	&__description {
 		color: #fff;
-		font-size: 1.5rem;
-		max-width: 25rem;
+		font-size: 1.1rem;
+		font-weight: 100;
+		text-shadow: 2px 2px 0 rbga(0, 0, 0, .1);
+		max-width: 30rem;
 		margin-left: auto;
 		margin-right: auto;
+
+		@mixin atSmall{
+			font-size: 1.875rem;
+		}
 	}
 }
 
