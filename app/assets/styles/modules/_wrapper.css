@@ -1,4 +1,5 @@
 .wrapper {
+	overflow: hidden;
 	/* padding left and right to make sure that in the mobile view, the line do not touch the edge of the screen */
 	padding-left: 18px;
 	padding-right: 18px;
