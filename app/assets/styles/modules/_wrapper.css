@@ -1,7 +1,17 @@
 .wrapper {
+	/* padding left and right to make sure that in the mobile view, the line do not touch the edge of the screen */
 	padding-left: 18px;
 	padding-right: 18px;
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+
+	&--medium {
+		max-width: 976px;
+	}
+	/* we have a situation where a wrapper inside a wrapper. So we state that any wrapper nested inside a wrapper have no padding */
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
