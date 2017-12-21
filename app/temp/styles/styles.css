@@ -373,6 +373,9 @@ img {
 	-webkit-box-sizing: border-box; 
 	        box-sizing: border-box; 
 }
+a {
+	color: #d59541;
+}
 /* _at the first of the filename indicate that file is a partial file */
 .large-hero {
 	position: relative;
@@ -528,6 +531,9 @@ img {
 .headline--b-margin-large {
 		margin-bottom: 1.6em;
 	}
+.headline--no-t-margin {
+		margin-top: 0;
+	}
 /* create a fake content with CSS
 	this will add blank space after all of these content in the main row div
 	We should move to mixin.css to reuse it 
@@ -552,12 +558,21 @@ img {
 		/* padding still apply but do not affect our width caculating. Then we move it to global
 		box-sizing: border-box;  */
 	}
+/* add margin bottom if the screen is smaller than medium */
+.row__b-margin-until-medium {
+		margin-bottom: 1rem;
+	}
 /* Only in medium size, we want to apply the column */
 @media (min-width: 800px) {
 .row {
 
 		/* increase the __medium-4 a little bit to match the design file */
 }
+
+		.row__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
 		.row__medium-4 {
 			float: left;
 			width: 33.33%;
@@ -574,6 +589,21 @@ img {
 		.row__medium-8-smaller {
 			width: 67%;
 		}
+	}
+.generic-content-container p {
+		line-height: 1.65;
+		margin: 1.8rem 0;
+	}
+@media (min-width: 530px) {
+.generic-content-container p {
+			font-size: 1.125rem /* at larger scree. the font-size will be default, 1rem */
+	}
+	}
+/* personally, the author do not want to nest more than one */
+.generic-content-container p a {
+		font-weight: 700; /* font-weight 400 is consider normal */
+		/* we can also color orange here but it is safe to apply it global. Why ? we know that never set $mainBlue for link
+		but bold is not (for ex: link in the header) */
 	}
 
 

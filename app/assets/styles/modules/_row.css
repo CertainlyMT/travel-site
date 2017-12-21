@@ -24,8 +24,18 @@
 		box-sizing: border-box;  */
 	}
 
+	/* add margin bottom if the screen is smaller than medium */
+	&__b-margin-until-medium {
+		margin-bottom: 1rem;
+	}
+
 	/* Only in medium size, we want to apply the column */
 	@mixin atMedium {
+
+		&__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
 		&__medium-4 {
 			float: left;
 			width: 33.33%;

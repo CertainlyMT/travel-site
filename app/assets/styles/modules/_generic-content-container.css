@@ -1,0 +1,18 @@
+.generic-content-container {
+	
+	p {
+		line-height: 1.65;
+		margin: 1.8rem 0;
+
+		@mixin atSmall {
+			font-size: 1.125rem; /* at larger scree. the font-size will be default, 1rem */
+		}
+	}
+
+	/* personally, the author do not want to nest more than one */
+	p a {
+		font-weight: 700; /* font-weight 400 is consider normal */
+		/* we can also color orange here but it is safe to apply it global. Why ? we know that never set $mainBlue for link
+		but bold is not (for ex: link in the header) */
+	}
+}
