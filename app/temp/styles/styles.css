@@ -484,6 +484,7 @@ a {
 .page-section {
 	padding: 1.2rem 0;
 }
+/* the gap is too big for mobile  view */
 @media (min-width: 800px) {
 .page-section {
 		padding: 4.5rem 0
@@ -549,7 +550,7 @@ a {
 	}
 .row--gutters {
 		/* if we remove the padding of the div__8, it will not be the same ratio of 1/3, 2/3 */ 
-		padding-right: -65px; /* this will add 65px to the row--gutters. If you color wrapper green and row yellow, you will see it
+		margin-right: -65px; /* this will add 65px to the row--gutters. If you color wrapper green and row yellow, you will see it
 		The div__8 still have its margin. Then we just have to overflow: hidden in the wrapper to hide the padding */
 	}
 /* we don't want to select and modify the actual row div, we want to modify all the child div to have padding */
@@ -557,6 +558,12 @@ a {
 		padding-right: 65px; /* at this point, the div__8 will broke to new line. That is because we have 99.99% of the width + 65px*/
 		/* padding still apply but do not affect our width caculating. Then we move it to global
 		box-sizing: border-box;  */
+	}
+.row--gutters-large {
+		margin-right: -100px; 
+	}
+.row--gutters-large > div {
+		padding-right: 100px;
 	}
 /* add margin bottom if the screen is smaller than medium */
 .row__b-margin-until-medium {
@@ -581,6 +588,11 @@ a {
 			width: 37%;
 		}
 
+		.row__medium-6 {
+			float: left;
+			width: 50%;
+		}
+
 		.row__medium-8 {
 			float: left;
 			width: 66.66%;
@@ -591,8 +603,9 @@ a {
 		}
 	}
 .generic-content-container p {
+		font-weight: 300;
 		line-height: 1.65;
-		margin: 1.8rem 0;
+		margin: 0 0 1.8rem 0;
 	}
 @media (min-width: 530px) {
 .generic-content-container p {
@@ -604,6 +617,47 @@ a {
 		font-weight: 700; /* font-weight 400 is consider normal */
 		/* we can also color orange here but it is safe to apply it global. Why ? we know that never set $mainBlue for link
 		but bold is not (for ex: link in the header) */
+	}
+.section-title {
+	font-size: 2.55rem;
+	font-weight: 300;
+	text-align: center;
+}
+@media (min-width: 530px) {
+.section-title {
+		font-size: 3.75rem
+}
+	}
+.section-title strong {
+		font-weight: 500;
+	}
+.section-title__icon {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: .6rem;
+	}
+@media (min-width: 530px) {
+.section-title__icon {
+			margin-right: 0.5rem;
+			margin-left: 0;
+			margin-bottom: 0;
+			display: inline-block
+	}
+	}
+.feature-item {
+	position: relative;
+	padding-left: 94px;
+	padding-bottom: 2.5rem;
+}
+.feature-item__icon {
+		position: absolute;
+		left: 0;
+	}
+.feature-item__title {
+		font-size: 1.875rem;
+		font-weight: 300;
+		margin-bottom: 0.8rem;
 	}
 
 
