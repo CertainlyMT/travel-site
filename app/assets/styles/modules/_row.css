@@ -13,7 +13,7 @@
 
 	&--gutters {
 		/* if we remove the padding of the div__8, it will not be the same ratio of 1/3, 2/3 */ 
-		padding-right: -65px; /* this will add 65px to the row--gutters. If you color wrapper green and row yellow, you will see it
+		margin-right: -65px; /* this will add 65px to the row--gutters. If you color wrapper green and row yellow, you will see it
 		The div__8 still have its margin. Then we just have to overflow: hidden in the wrapper to hide the padding */
 	}
 
@@ -22,6 +22,14 @@
 		padding-right: 65px; /* at this point, the div__8 will broke to new line. That is because we have 99.99% of the width + 65px*/
 		/* padding still apply but do not affect our width caculating. Then we move it to global
 		box-sizing: border-box;  */
+	}
+
+	&--gutters-large {
+		margin-right: -100px; 
+	}
+
+	&--gutters-large > div {
+		padding-right: 100px;
 	}
 
 	/* add margin bottom if the screen is smaller than medium */
@@ -44,6 +52,11 @@
 		/* increase the __medium-4 a little bit to match the design file */
 		&__medium-4-larger {
 			width: 37%;
+		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
 		}
 
 		&__medium-8 {
