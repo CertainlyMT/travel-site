@@ -23,4 +23,16 @@
 			display: inline-block;
 		}
 	}
+
+	&__testimonial {
+		color: $mainBlue;
+	}
+
+	&__icon-testimonial {
+
+		@mixin atSmall {
+			margin-right: 2rem;
+			transform: translateY(15%);
+		}
+	}
 }
