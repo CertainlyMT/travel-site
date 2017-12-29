@@ -494,6 +494,10 @@ a {
 		background-color: #2f5572;
 		color: #FFF;
 	}
+.page-section--testimonials {
+		background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+		background-size: cover; /* cover the containing div */ 
+	}
 .headline {
 	font-weight: 300;
 	font-size: 1.9rem;
@@ -639,11 +643,16 @@ a {
 	}
 @media (min-width: 530px) {
 .section-title__icon {
+			position: relative;
+			top: 8px; /* put the icon down 8px */
 			margin-right: 0.5rem;
 			margin-left: 0;
 			margin-bottom: 0;
 			display: inline-block
 	}
+	}
+.section-title__blue {
+		color: #2f5572;
 	}
 .feature-item {
 	position: relative;
@@ -678,6 +687,42 @@ a {
 			font-size: 1.875rem
 	}
 	}
-
+.testimonial {
+	background-color: rgba(255,255,255, .8); /* red, green, blue and a for transparency */
+	padding: 0 1.8125rem 1px 1.8125rem;
+}
+/* why 1px for bottom padding? bottom margin of the paragraph create space for us
+	However, if the bottom padding is 0, the bottom margin will leak outside the container element and the test will touch
+	the bottom line of the container */
+.testimonial__photo {
+		border-radius: 80px; /* if this stand alone, we can not see any changes because the image is allowed to pertru
+		outside the egdes of the containing div. so we tell this div: overflow:hidden; */
+		overflow: hidden;
+		/* However, we can not see the div right side because the div take the full width of container
+		In other to see the different, we set the div width and height equal the size of the image */
+		width: 160px;
+		height: 160px;
+		margin: 0 auto -80px auto;
+		/* pull the image to half of its size but when you use relative, the surrounding does not know the changes
+		So the paragraph does not know to move up 80px too
+		Therefore, we can give the image negative bottom margin*/
+		position: relative;
+		top: -80px;
+		border: 6px solid rgba(255, 255, 255, .8);
+	}
+.testimonial__title {
+		color: #2f5572;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin: 0;
+	}
+.testimonial__subtitle {
+		color: #d59541;
+		text-align: center;
+		font-weight: 400;
+		font-size: 0.9375rem;
+		margin: .25rem 1rem 0;
+	}
 
 
