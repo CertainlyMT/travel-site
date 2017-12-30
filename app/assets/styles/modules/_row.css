@@ -11,6 +11,11 @@
 
 	@mixin clearfix;
 
+	/* this class add padding to testimoninal rows so the image would not override the title */
+	&--t-padding {
+		padding-top: 80px;
+	}
+
 	&--gutters {
 		/* if we remove the padding of the div__8, it will not be the same ratio of 1/3, 2/3 */ 
 		margin-right: -65px; /* this will add 65px to the row--gutters. If you color wrapper green and row yellow, you will see it
@@ -30,6 +35,14 @@
 
 	&--gutters-large > div {
 		padding-right: 100px;
+	}
+
+	&--gutters-small {
+		margin-right: -45px;
+	}
+
+	&--gutters-small > div {
+		padding-right: 45px;
 	}
 
 	/* add margin bottom if the screen is smaller than medium */
@@ -66,6 +79,22 @@
 
 		&__medium-8-smaller {
 			width: 67%;
+		}
+	}
+
+	/* Begin equal height rules 
+	We use FLEXBOX*/
+	&--equal-height-at-medium {
+		@mixin atMedium {
+			/* this line can not do anything. 
+			However, we need to tell each of the 3 column to use flex box, instead of float left. 
+			The contain will flex to max height  */
+			display: flex;
+		}
+
+		& > div {
+			float: none;
+			display: flex;
 		}
 	}
 }
