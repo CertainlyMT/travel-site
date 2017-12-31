@@ -483,6 +483,16 @@ a {
 			padding-right: 18px
 	}
 	}
+.wrapper--no-padding-until-large {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+@media (min-width: 1010px) {
+.wrapper--no-padding-until-large {
+			padding-left: 18px;
+			padding-right: 18px
+	}
+	}
 .wrapper--b-margin {
 		margin-bottom: 1rem;
 	}
@@ -507,10 +517,26 @@ a {
 .page-section--testimonials {
 		background-color: #e0e6ef; 
 	}
-@media (min-width: 800px) {
+@media (min-width: 1010px) {
 .page-section--testimonials {
 			background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
 			background-size: cover /* cover the containing div */ 
+	}
+	}
+.page-section--no-b-padding-until-medium {
+		padding-bottom: 0;
+	}
+@media (min-width: 800px) {
+.page-section--no-b-padding-until-medium {
+			padding-bottom: 4.5rem
+	}
+	}
+.page-section--no-b-padding-until-large {
+		padding-bottom: 0;
+	}
+@media (min-width: 1010px) {
+.page-section--no-b-padding-until-large {
+			padding-bottom: 4.5rem
 	}
 	}
 .headline {
@@ -631,6 +657,38 @@ a {
 			width: 67%;
 		}
 	}
+@media (min-width: 1010px) {
+.row {
+
+		/* increase the __medium-4 a little bit to match the design file */
+}
+
+		.row__b-margin-until-large {
+			margin-bottom: 0;
+		}
+
+		.row__large-4 {
+			float: left;
+			width: 33.33%;
+		}
+		.row__large-4-larger {
+			width: 37%;
+		}
+
+		.row__large-6 {
+			float: left;
+			width: 50%;
+		}
+
+		.row__large-8 {
+			float: left;
+			width: 66.66%;
+		}
+
+		.row__large-8-smaller {
+			width: 67%;
+		}
+	}
 /* Begin equal height rules 
 	We use FLEXBOX*/
 @media (min-width: 800px) {
@@ -644,6 +702,22 @@ a {
 	}
 	}
 .row--equal-height-at-medium > div {
+			float: none;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+@media (min-width: 1010px) {
+.row--equal-height-at-large {
+			/* this line can not do anything. 
+			However, we need to tell each of the 3 column to use flex box, instead of float left. 
+			The contain will flex to max height  */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex
+	}
+	}
+.row--equal-height-at-large > div {
 			float: none;
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -733,13 +807,15 @@ a {
 .testimonial {
 	background-color: rgba(255,255,255, .8); /* red, green, blue and a for transparency */
 	padding: 0 18px 1px 18px;
-	margin-bottom: 80px;
+	margin-bottom: 98px;
 }
-@media (min-width: 800px) {
+/*for small screen so that the imagee do not cover the text */
+@media (min-width: 1010px) {
 .testimonial {
-		padding: 0 1.8125rem 1px 1.8125rem /* why 1px for bottom padding? bottom margin of the paragraph create space for us
+		padding: 0 1.8125rem 1px 1.8125rem; /* why 1px for bottom padding? bottom margin of the paragraph create space for us
 	However, if the bottom padding is 0, the bottom margin will leak outside the container element and the test will touch
 	the bottom line of the container */
+		margin-bottom: 0px
 }
 	}
 .testimonial__photo {
@@ -771,6 +847,9 @@ a {
 		font-weight: 400;
 		font-size: 0.9375rem;
 		margin: .25rem 1rem 0;
+	}
+.testimonial--last {
+		margin-bottom: 0;
 	}
 
 

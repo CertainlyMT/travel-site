@@ -3,7 +3,7 @@
 	padding: 0 18px 1px 18px;
 	margin-bottom: 98px; /*for small screen so that the imagee do not cover the text */
 
-	@mixin atMedium {
+	@mixin atLarge {
 		padding: 0 1.8125rem 1px 1.8125rem; /* why 1px for bottom padding? bottom margin of the paragraph create space for us
 	However, if the bottom padding is 0, the bottom margin will leak outside the container element and the test will touch
 	the bottom line of the container */

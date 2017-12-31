@@ -26,6 +26,16 @@
 		}
 	}
 
+	&--no-padding-until-large {
+		padding-left: 0px;
+		padding-right: 0px;
+
+		@mixin atLarge {
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+	}
+
 	&--b-margin {
 		margin-bottom: 1rem;
 
