@@ -1,0 +1,18 @@
+/* Test comment 
+the gulp svg sprite system use the must-dash (or mustache) template system
+These names (shape, base, position.relative .... ) have nothing to do with gulp or node, but depend on the package we use.
+We can read it from readme from the code github*/
+{{#shapes}}
+	/*Another test comment. This line will be duplicate 12 times because we have 12 different icon*/
+	.icon--{{base}} {
+		width: {{width.outer}}px;
+		height: {{height.outer}}px;
+		/* sprite indicate that we will go to the svg folder to get sprite file. 
+		Why don't we type the name ? because the sprite file is generate with a random string so it is different every time */
+		/* why 3 { instead of 2 ? because the sprite variable contain a / (go to the svg folder) and we don't want that / 
+		to be escaped*/
+		background-image: url('/temp/sprite/css/{{{sprite}}}');
+		/* we want something that the template can fill in for each unique icon */
+		background-position: {{position.relative.xy}};
+	}
+{{/shapes}}
